@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /api/metering
+  port: 8083
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/metering
+    username: local
+    password: local
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: metering
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
