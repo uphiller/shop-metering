@@ -15,7 +15,7 @@ public class KafkaConsumerService {
 
     private final ApiCallHistroyRepository apiCallHistroyRepository;
 
-    @KafkaListener(topics = "id", groupId = "metering")
+    @KafkaListener(topics = "callApi")
     public void consume(String message) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         ApiCall apiCall = objectMapper.readValue(message, ApiCall.class);
