@@ -13,6 +13,9 @@ spring:
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
@@ -20,3 +23,5 @@ spring:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    properties:
+      spring.json.trusted.packages: "*"
